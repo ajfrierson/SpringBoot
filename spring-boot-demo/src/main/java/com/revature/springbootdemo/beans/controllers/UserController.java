@@ -1,8 +1,11 @@
 package com.revature.springbootdemo.beans.controllers;
 
+import com.revature.springbootdemo.beans.Repositories.CarRepository;
+import com.revature.springbootdemo.beans.Repositories.UserRepository;
 import com.revature.springbootdemo.beans.models.Users;
 import org.apache.catalina.User;
 import org.apache.tomcat.util.http.parser.Authorization;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,9 +16,13 @@ import java.util.List;
 @RestController // @ResponseBody and @Controller are implied by @RestController
 @RequestMapping("/users")
 public class UserController {
+    private final UserRepository userRepository;
+    private final CarRepository carRepository;
 
-    // @Autowired // not necessary for now, as constructor has no dependencies.
-    public UserController() {
+    @Autowired // not necessary for now, as constructor has no dependencies.
+    public UserController(UserRepository userRepository, CarRepository carRepository) {
+        this.userRepository = userRepository;
+        this.carRepository = carRepository;
     }
 
     // get all users

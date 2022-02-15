@@ -1,5 +1,7 @@
 package com.revature.springbootdemo.beans.controllers;
 
+import com.revature.springbootdemo.beans.Repositories.CarRepository;
+import com.revature.springbootdemo.beans.Repositories.UserRepository;
 import com.revature.springbootdemo.beans.models.Cars;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +15,13 @@ import java.util.List;
 @RestController // @ResponseBody and @Controller are implied by @RestController
 @RequestMapping("/cars")
 public class CarController {
+ private final CarRepository carRepository;
+ private final UserRepository userRepository;
 
-   // @Autowired // not necessary for now, as constructor has no dependencies.
-    public CarController(){
-
+   @Autowired // not necessary for now, as constructor has no dependencies.
+    public CarController(CarRepository carRepository, UserRepository userRepository){
+         this.carRepository = carRepository;
+         this.userRepository = userRepository;
     }
 
     // get all cars
