@@ -19,9 +19,14 @@ public class UserService {
         userRepo.save(user);
     }
 
-    // Get
+    // GET car by ID
     public Users getUser(Users user){
         return userRepo.getById(user.getId());
+    }
+
+    //DELETE by ID
+    public void deleteUser(Users user){
+        userRepo.delete(user);
     }
 
 }

@@ -20,8 +20,13 @@ public class CarService {
         carRepo.save(car);
     }
 
-    // Get
+    // GET car by ID
     public Cars getCars(Cars car){
         return carRepo.getById(car.getCarId());
+    }
+
+    // DELETE by ID
+    public void deleteCars(Cars car){
+        carRepo.delete(car);
     }
 }

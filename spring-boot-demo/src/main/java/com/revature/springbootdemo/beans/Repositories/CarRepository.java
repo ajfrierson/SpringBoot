@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Handles data persistence
+ * Handles data persistence CRUD
  */
 @Repository
 public interface CarRepository extends JpaRepository<Cars, Integer>  {
