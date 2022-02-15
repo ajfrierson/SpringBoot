@@ -29,25 +29,25 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET)
     public List<Users> getAllUsers(@RequestBody Users users){
 
-        return null;
+        return userRepository.findAll();
     }
 
     // get a user by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public void getUserById(@PathVariable Integer id){
-
+        userRepository.getById(id);
     }
 
 
     // post a user
     @RequestMapping(method = RequestMethod.POST)
     public void postUser(@RequestBody Users user){
-
+        userRepository.save(user);
     }
 
     // delete a user
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteUser(@PathVariable Integer id, @RequestBody Users user){
-
+        userRepository.deleteById(id);
     }
 }

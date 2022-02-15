@@ -27,30 +27,30 @@ public class CarController {
     // get all cars
     @RequestMapping(method = RequestMethod.GET)
     public List<Cars> getAllCars(){
-        return null;
+        return carRepository.findAll();
     }
 
     // get a single car by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Cars getCarById(@PathVariable Integer id){
-        return null;
+        return carRepository.getById(id);
     }
 
     // post a car
     @RequestMapping(method = RequestMethod.POST)
     public void postCar(@RequestBody Cars car){
-
+          carRepository.save(car);
     }
 
     //update a car by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public void updateCarById(@RequestBody Cars car, @PathVariable Integer id){
-
+         carRepository.save(car);
     }
 
     //delete a car by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteCar(@PathVariable Integer id){
-
+         carRepository.deleteAll();
     }
 }
