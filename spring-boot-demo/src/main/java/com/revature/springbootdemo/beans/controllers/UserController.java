@@ -17,7 +17,7 @@ public class UserController {
 
     // get all users
     @RequestMapping(method = RequestMethod.GET)
-    public List<Users> getAllUsers(@RequestBody Authorization auth){
+    public List<Users> getAllUsers(@RequestBody Users users){
 
         return null;
     }

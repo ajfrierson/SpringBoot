@@ -1,10 +1,24 @@
 package com.revature.springbootdemo.beans.models;
 
+import javax.persistence.*;
+
+@Entity
 public class Cars {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "car_Id")
     private Integer car_Id;
+
+    @Column
     private String make;
+
+    @Column
     private String model;
+
+    @Column
     private String color;
+
+    @Column
     private Integer year;
 
     public Cars() {

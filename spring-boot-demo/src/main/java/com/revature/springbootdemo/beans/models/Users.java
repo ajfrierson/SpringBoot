@@ -1,9 +1,22 @@
 package com.revature.springbootdemo.beans.models;
 
+import javax.persistence.*;
+
+
+@Entity
 public class Users {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_Id")
     private Integer user_Id;
+
+    @Column
     private String firstName;
+
+    @Column
     private String lastName;
+
+    @Column
     private Integer age;
 
     public Users() {
