@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
+/**
+ * Acts as a servlet for HTTP requests
+ */
 @RestController // @ResponseBody and @Controller are implied by @RestController
 @RequestMapping("/cars")
 public class CarController {
