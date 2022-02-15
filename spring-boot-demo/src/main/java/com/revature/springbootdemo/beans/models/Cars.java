@@ -5,7 +5,7 @@ public class Cars {
     private String make;
     private String model;
     private String color;
-    private int year;
+    private Integer year;
 
     public Cars() {
     }

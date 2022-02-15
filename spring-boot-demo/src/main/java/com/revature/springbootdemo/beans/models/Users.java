@@ -4,7 +4,7 @@ public class Users {
     private Integer user_Id;
     private String firstName;
     private String lastName;
-    private int age;
+    private Integer age;
 
     public Users() {
     }
