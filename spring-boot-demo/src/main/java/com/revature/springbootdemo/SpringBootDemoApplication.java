@@ -25,9 +25,14 @@ public class SpringBootDemoApplication {
 		Cars car = new Cars();
 
 		user.setFirstName("Joseph");
+		user.setLastName("Smith");
+		user.setAge(33);
 		userRepository.save(user);
 
 		car.setMake("Dodge");
+		car.setModel("Ram");
+		car.setColor("White");
+		car.setYear(2019);
 		carRepository.save(car);
 	}
 
